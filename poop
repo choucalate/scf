@@ -1,0 +1,166 @@
+========================================================================================
+=  Please ensure that you set the default write concern for the database by setting    =
+=   one of the options                                                                 =
+=                                                                                      =
+=     w: (value of > -1 or the string 'majority'), where < 1 means                     =
+=        no write acknowlegement                                                       =
+=     journal: true/false, wait for flush to journal before acknowlegement             =
+=     fsync: true/false, wait for flush to file system before acknowlegement           =
+=                                                                                      =
+=  For backward compatibility safe is still supported and                              =
+=   allows values of [true | false | {j:true} | {w:n, wtimeout:n} | {fsync:true}]      =
+=   the default value is false which means the driver receives does not                =
+=   return the information of the success/error of the insert/update/remove            =
+=                                                                                      =
+=   ex: new Db(new Server('localhost', 27017), {safe:false})                           =
+=                                                                                      =
+=   http://www.mongodb.org/display/DOCS/getLastError+Command                           =
+=                                                                                      =
+=  The default of no acknowlegement will change in the very near future                =
+=                                                                                      =
+=  This message will disappear when the default safe is set on the driver Db           =
+========================================================================================
+Express server listening on port 8000 in development mode
+connected success!
+saving
+saved: titlepicnic date: [object Object] info: NAO
+success { __v: 0,
+  title: 'picnic',
+  info: 'NAO',
+  _id: 515ce70040eb526b1c000001,
+  date: Wed Apr 03 2013 19:35:44 GMT-0700 (PDT) }
+{ title: 'an event',
+  info: 'this event please',
+  _id: 515a934c3cab553d7d000001,
+  __v: 0,
+  date: Tue Apr 02 2013 01:14:04 GMT-0700 (PDT) }
+{ title: 'an event',
+  info: 'this event please',
+  _id: 515b3a9f2b66c5fe0e000001,
+  __v: 0,
+  date: Tue Apr 02 2013 13:07:59 GMT-0700 (PDT) }
+{ title: 'an event',
+  info: 'this event please',
+  _id: 515b3aa22b66c5fe0e000002,
+  __v: 0,
+  date: Tue Apr 02 2013 13:08:02 GMT-0700 (PDT) }
+{ title: 'an event',
+  info: 'this event please',
+  _id: 515b3aa42b66c5fe0e000003,
+  __v: 0,
+  date: Tue Apr 02 2013 13:08:04 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b3aacee42ce790f000001,
+  __v: 0,
+  date: Tue Apr 02 2013 13:08:12 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b3ab0ee42ce790f000002,
+  __v: 0,
+  date: Tue Apr 02 2013 13:08:16 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b3b96f1333e0510000001,
+  __v: 0,
+  date: Tue Apr 02 2013 13:12:06 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b3bcda9a7aa2610000001,
+  __v: 0,
+  date: Tue Apr 02 2013 13:13:01 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b3c190236478410000001,
+  __v: 0,
+  date: Tue Apr 02 2013 13:14:17 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b3d0b959756d910000001,
+  __v: 0,
+  date: Tue Apr 02 2013 13:18:19 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b3d16959756d910000002,
+  __v: 0,
+  date: Tue Apr 02 2013 13:18:30 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b3d19959756d910000003,
+  __v: 0,
+  date: Tue Apr 02 2013 13:18:33 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b3d3e45d1ecfd10000001,
+  __v: 0,
+  date: Tue Apr 02 2013 13:19:10 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b5432784694c719000001,
+  __v: 0,
+  date: Tue Apr 02 2013 14:57:06 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515b55dc784694c719000002,
+  __v: 0,
+  date: Tue Apr 02 2013 15:04:12 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515ca330542125380b000001,
+  __v: 0,
+  date: Wed Apr 03 2013 14:46:24 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515ce2221d3895761a000001,
+  __v: 0,
+  date: Wed Apr 03 2013 19:14:58 GMT-0700 (PDT) }
+{ title: 'asdf',
+  info: 'asdfasdf',
+  _id: 515ce413c320deb01b000001,
+  __v: 0,
+  date: Mon Apr 01 2013 17:00:00 GMT-0700 (PDT) }
+{ title: 'asdf',
+  info: 'asdfasdf',
+  _id: 515ce43e43edc1bd1b000001,
+  __v: 0,
+  date: Mon Apr 01 2013 17:00:00 GMT-0700 (PDT) }
+{ title: 'asdf',
+  info: 'asdfasdf',
+  _id: 515ce4a9b0223dd21b000001,
+  __v: 0,
+  date: Mon Apr 01 2013 17:00:00 GMT-0700 (PDT) }
+{ title: 'please work',
+  info: 'asdfkljasdlfjlaskdfj',
+  _id: 515ce59715a262ee1b000001,
+  __v: 0,
+  date: Tue Apr 16 2013 17:00:00 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515ce59715a262ee1b000002,
+  __v: 0,
+  date: Wed Apr 03 2013 19:29:43 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515ce5ce16785f041c000001,
+  __v: 0,
+  date: Wed Apr 03 2013 19:30:38 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515ce6653ebe63271c000001,
+  __v: 0,
+  date: Wed Apr 03 2013 19:33:09 GMT-0700 (PDT) }
+{ title: 'asdfasdf',
+  info: 'asdfasdf',
+  _id: 515ce66d3ebe63271c000002,
+  __v: 0,
+  date: Tue Apr 16 2013 17:00:00 GMT-0700 (PDT) }
+{ title: 'asdfasdf',
+  info: 'lfjlasjdfklajsdklfjlaskdfj',
+  _id: 515ce6c40c0b134e1c000001,
+  __v: 0,
+  date: Tue Apr 16 2013 17:00:00 GMT-0700 (PDT) }
+{ title: 'picnic',
+  info: 'NAO',
+  _id: 515ce6c40c0b134e1c000002,
+  __v: 0,
+  date: Wed Apr 03 2013 19:34:44 GMT-0700 (PDT) }

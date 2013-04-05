@@ -55,21 +55,8 @@ html.no-js
     .container-fluid
       .row-fluid
         .span10.offset1
-          h3 Event Manager
-          form.form-horizontal(method='post')
-            .control-group
-              label.control-label(for='inputTitle') Title: 
-              .controls
-                input#inputEmail(type='text', placeholder='Event Title', name='event-title')
-            .control-group
-              label.control-label(for='inputDate') Date: 
-              .controls
-                input#inputPassword(type='date', placeholder='i.e. 4/1/13', name='event-date')
-            .control-group
-              label.control-label(for='inputDate') Content: 
-              .controls
-                textarea(rows='10', style='width: 500px', name='event-content')
-            button.btn(type='submit') Add Event
+          - each email in scfEmails
+             li=email.useremail
         // body content
     a.btn(href='#myModal', role='button', data-toggle='modal', data-target='#myModal') See Preview
     #myModal.modal.hide.fade
@@ -79,7 +66,6 @@ html.no-js
       .modal-body
         p One fine body…
       .modal-footer
-        a.btn(href='/emaillist') Go to email
         a.btn(href='#') Close
         a.btn.btn-primary(href='#') Save changes
     hr

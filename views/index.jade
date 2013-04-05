@@ -70,8 +70,8 @@ html.no-js
                     a(href='#') Videos
               li
                 a(href='#contact') Contact
-            form.navbar-form.pull-right
-              input.span2(type='text', placeholder='Email')
+            form.navbar-form.pull-right(method='post')
+              input.span2(type='text', placeholder='Email', name = 'scf-email')
               input.span2(type='password', placeholder='Password')
               button.btn.signin(type='submit') Sign in
               button.btn.register(type='submit') Register
@@ -99,7 +99,7 @@ html.no-js
             .span4.offset1
               h1= title
                 #articles
-                   - for(var count = 0; count < articles.length && count< 3; ++count) {
+                   - for(var count = articles.length-1; count >= articles.length-4; --count) {
                      element = articles[count]
                      div.element
                        div.title= element.title

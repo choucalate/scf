@@ -5,6 +5,7 @@
 
 var express = require('express');
 var events = require('./models/events'); 
+var email = require('./models/emails');
 var ArticleProvider = require('./articleprovider-mongodb').ArticleProvider;
 
 var app = module.exports = express.createServer();
@@ -33,30 +34,50 @@ var articleProvider = new ArticleProvider('localhost', 27017);
 // Routes
 
 app.get('/', function(req, res){
-    events.saveEvent("picnic",{},"NAO"); 
     events.getEventList(function(error, docEvent) {
-        for(var i = 0; i < docEvent.length; i++)
-          console.log(docEvent[i]);
+       /* for(var i = 0; i < docEvent.length; i++)
+          console.log(docEvent[i]);*/
         res.render('index.jade', {
                 title: 'Events',
                 articles: docEvent
         });
     }); 
-/*
-    articleProvider.findAll( function(error,docs){
-        res.render('index.jade', { 
-                title: 'Events',
-                articles: docs
-        });
-    });*/
 });
-
+app.post('/', function(req, res) {
+  console.log("posting... to eamil");
+  var emails = req.param('scf-email');
+  email.saveEmail(emails, function( error, result) {
+     if(error) console.log(error);
+     else console.log("result: " + result);
+     res.redirect('/emaillist');
+  });
+});
+app.get('/emaillist', function(req, res) {
+    email.getEmailList(function (error, emailList) {
+      console.log(emailList);  
+      res.render('emaillist.jade', {
+         title: 'Email list',
+         scfEmails: emailList
+      });
+    });
+});
 app.get('/admin', function(req, res) {
     res.render('admin.jade', {
         title: 'Admin Page'
     });
 });
 
+app.post('/admin', function(req, res) {
+    var title = req.param("event-title");
+    var date = req.param("event-date");
+    var info = req.param("event-content");
+    events.saveEvent(title, date, info
+       , function(error, result) {
+          if(error) console.log(error);   
+          else console.log("result: " + result);
+          res.redirect('/');
+       }); 
+});
 app.get('/blog/new', function(req, res) {
     res.render('blog_new.jade', { 
         title: 'New Post'
