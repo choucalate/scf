@@ -70,8 +70,8 @@ html.no-js
                     a(href='#') Videos
               li
                 a(href='#contact') Contact
-            form.navbar-form.pull-right(method='post')
-              input.span2(type='text', placeholder='Email', name = 'scf-email')
+            form.navbar-form.pull-right
+              input.span2(type='text', placeholder='Email')
               input.span2(type='password', placeholder='Password')
               button.btn.signin(type='submit') Sign in
               button.btn.register(type='submit') Register
@@ -86,7 +86,7 @@ html.no-js
           li(data-target='#myCarousel', data-slide-to='2')
         .carousel-inner
           .item.active
-            img(src='/img/cyscpic.jpg', alt='')
+            img(src='img/cyscpic.jpg', alt='')
           .item
             img(src='/img/cyscpic2.jpg', alt='')
           .item
@@ -99,19 +99,21 @@ html.no-js
             .span4.offset1
               h1= title
                 #articles
-                   - for(var count = articles.length-1; count >= articles.length-4; --count) {
+                   - for(var count = articles.length-1; count >= articles.length-3; --count) {
                      element = articles[count]
                      div.element
                        div.title= element.title
                        div.body= element.info
                    - }
             .span4.offset2
-              h2 About
-              p
-                | We were recently established as a campus fellowship on
-                | UCSD campus
-              p
-                a.btn(href='#') Learn More About Us! »
+              form.cform(method='post')
+                article.title
+                  span Mailing List
+                article.form
+                  div Your Email
+                  input(type='text', placeholder='name@emailprovider.com', name = 'scf-email')
+                article.btn
+                  input(type='submit', value='Subscribe')
         div
           .row
             .span8.offset2(style='margin-top: 10px; border: 1px solid silver;')

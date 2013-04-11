@@ -78,6 +78,12 @@ app.post('/admin', function(req, res) {
           res.redirect('/');
        }); 
 });
+app.get('/admin/events', function(req, res) {
+    res.render('events.jade', { 
+         title:'Event Manager'
+    });
+});
+
 app.get('/blog/new', function(req, res) {
     res.render('blog_new.jade', { 
         title: 'New Post'

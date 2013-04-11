@@ -97,14 +97,23 @@ html.no-js
         .span12
           .row-fluid
             .span4.offset1
-              h2 Upcoming Events
+              h1= title
+                #articles
+                   - for(var count = articles.length-1; count >= articles.length-3; --count) {
+                     element = articles[count]
+                     div.element
+                       div.title= element.title
+                       div.body= element.info
+                   - }
             .span4.offset2
-              h2 About
-              p
-                | We were recently established as a campus fellowship on
-                | UCSD campus
-              p
-                a.btn(href='#') Learn More About Us! »
+              form.cform
+                article.title
+                  span Mailing List
+                article.form
+                  div Your Email
+                  input(type='text', placeholder='name@emailprovider.com', name = 'scf-email')
+                article.btn
+                  input(type='submit', value='Subscribe')
         div
           .row
             .span8.offset2(style='margin-top: 10px; border: 1px solid silver;')
